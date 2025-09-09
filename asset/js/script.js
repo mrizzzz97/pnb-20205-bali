@@ -5,21 +5,32 @@ const nextBtn = document.querySelector('.next');
 
 let index = 0;
 
-function showSlide(i) {
-  const cardWidth = slides[0].offsetWidth + 20; // lebar kartu + margin kiri/kanan
+function updateActiveSlide(i) {
+  slides.forEach((slide, idx) => {
+    slide.classList.remove('active');
+    if (idx === i) {
+      slide.classList.add('active');
+    }
+  });
+
+  const card = slides[0];
+  const style = window.getComputedStyle(card);
+  const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+  const cardWidth = card.offsetWidth + margin;
+
   carousel.style.transform = `translateX(${-i * cardWidth}px)`;
   index = i;
 }
 
 prevBtn.addEventListener('click', () => {
   index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
+  updateActiveSlide(index);
 });
 
 nextBtn.addEventListener('click', () => {
   index = (index + 1) % slides.length;
-  showSlide(index);
+  updateActiveSlide(index);
 });
 
-// Init posisi awal
-showSlide(index);
+// Init
+updateActiveSlide(index);
