@@ -1,13 +1,13 @@
 const slides = document.querySelectorAll('.card');
+const carousel = document.querySelector('.carousel');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
+
 let index = 0;
 
 function showSlide(i) {
-  const cardWidth = slides[0].offsetWidth + 30; // lebar card + margin (300 + 15+15)
-  slides.forEach((slide, idx) => {
-    slide.style.transform = `translateX(${(idx - i) * cardWidth}px)`;
-  });
+  const cardWidth = slides[0].offsetWidth + 20; // lebar kartu + margin kiri/kanan
+  carousel.style.transform = `translateX(${-i * cardWidth}px)`;
   index = i;
 }
 
@@ -21,5 +21,5 @@ nextBtn.addEventListener('click', () => {
   showSlide(index);
 });
 
-// Init
+// Init posisi awal
 showSlide(index);
