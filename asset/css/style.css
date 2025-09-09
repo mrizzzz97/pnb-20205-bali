@@ -1,0 +1,195 @@
+/* =================== Import Fonts =================== */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto.ttf") format("truetype");
+}
+@font-face {
+  font-family: "StoryScript";
+  src: url("../fonts/Story-script.ttf") format("truetype");
+}
+
+/* =================== Reset =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../img/bg-1.png") no-repeat center center / cover;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* =================== Navbar =================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+nav .logo {
+  font-family: "StoryScript", cursive;
+  font-size: 1.5rem;
+  background: rgba(0,0,0,0.6);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: limegreen;
+}
+
+/* =================== Hero =================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
+  max-width: 40%;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 8rem;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  max-width: 400px;
+}
+
+/* =================== Carousel =================== */
+.carousel-wrapper {
+  position: absolute;
+  top: 20%;
+  right: 3%;
+  width: 55%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.card {
+  min-width: 300px;
+  max-width: 300px;
+  margin: 0 15px;   /* jarak antar card kiri-kanan */
+  background: rgba(0,0,0,0.7);
+  border-radius: 15px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: 400px;        /* tinggi gambar besar */
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  margin: 0.75rem;
+  color: #fff;
+}
+
+.card p {
+  font-size: 0.85rem;
+  margin: 0 0.75rem 1rem;
+  line-height: 1.4;
+  color: #f0f0f0;
+}
+
+
+
+
+/* =================== Buttons =================== */
+.nav-btn {
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* =================== Responsive =================== */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 5rem;
+  }
+  .hero {
+    max-width: 60%;
+  }
+  .carousel-wrapper {
+    width: 80%;
+    top: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    max-width: 90%;
+    padding-right: 5%;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .carousel-wrapper {
+    top: 40%;
+    width: 95%;
+    right: 2%;
+  }
+  .card {
+    min-width: 160px;
+  }
+  .card img {
+    height: 120px;
+  }
+}
