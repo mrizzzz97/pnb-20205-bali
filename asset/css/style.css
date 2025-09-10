@@ -24,7 +24,7 @@ body {
   color: #fff;
   min-height: 100vh;
   overflow-x: hidden;
-  background: url("../img/bg-1.png") no-repeat center/cover;
+  background: url("../img/awal/bg-1.png") no-repeat center/cover;
 }
 
 /* ========== Navbar ========== */
@@ -225,10 +225,7 @@ nav ul li a:hover,
   margin-bottom: 8px;
 }
 
-.social-icons a {
-  margin-right: 10px;
-  font-size: 20px;
-}
+/* .social-icons styles removed along with Contact section */
 
 .footer-bottom {
   text-align: center;
@@ -253,6 +250,13 @@ nav ul li a:hover,
 .about-container.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* also support the JS-added class used by product-anim.js */
+.about-container.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUpSmall .6s ease both;
 }
 
 .about-container h2 {
@@ -281,12 +285,34 @@ nav ul li a:hover,
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes btnPress {
-  0%   { transform: translateY(0) scale(1); }
-  40%  { transform: translateY(2px) scale(.96); }
-  100% { transform: translateY(0) scale(1); }
+/* Product entry animation (used on product pages) */
+@keyframes fadeInUpSmall {
+  from { opacity: 0; transform: translateY(20px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.btn-press {
-  animation: btnPress .36s cubic-bezier(.2,.8,.2,1);
+.product-hero,
+.product-info,
+.product-gallery {
+  opacity: 0;
+  transform: translateY(20px) scale(.98);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.product-hero.in-view,
+.product-info.in-view,
+.product-gallery.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: fadeInUpSmall .6s ease both;
+}
+
+/* stagger helper: use data-delay attribute on elements or override with nth-of-type */
+.product-info.in-view { animation-delay: .05s; }
+.product-gallery.in-view { animation-delay: .15s; }
+
+/* small responsiveness tweaks for product pages */
+@media (max-width: 800px) {
+  .product-hero { display:block; padding: 2rem 1rem; }
+  .product-container { display:block; padding: 1rem; }
 }

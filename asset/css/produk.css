@@ -1,3 +1,9 @@
+/* =========================================
+   Produk.css - Style halaman destinasi/produk
+   Lebih simpel & mudah dipahami pemula
+   ========================================= */
+
+/* Scroll halus saat klik anchor link */
 html {
   scroll-behavior: smooth;
 }
@@ -6,38 +12,62 @@ html {
 .product-hero {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem; /* jarak antar elemen */
   align-items: flex-start;
   padding: 80px 5% 40px;
   max-width: 1100px;
   margin: 0 auto;
 }
+
 .product-hero .hero-image img {
   width: 100%;
   height: 420px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
-  will-change: transform, box-shadow;
-  transition: transform 0.6s cubic-bezier(.2, .9, .2, 1), box-shadow 0.4s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .product-hero .hero-image img:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(2, 44, 67, 0.45);
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
+
 .product-hero .hero-content h1 {
-  font: 2.5rem "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  font-family: "Montserrat", sans-serif;
   color: #38bdf8;
   margin-bottom: 0.5rem;
 }
+
 .product-hero .hero-content p {
   max-width: 600px;
   color: #e2e8f0;
   line-height: 1.6;
 }
+
 .hero-content {
   margin-top: 14px;
 }
+
+/* ===== ANIMASI MASUK ===== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* ===== BUTTON ===== */
 .btn {
@@ -47,13 +77,14 @@ html {
   background: #38bdf8;
   color: #022c43;
   border-radius: 8px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 700;
-  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+  transition: background 0.3s, transform 0.3s;
 }
+
 .btn:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(3, 105, 161, 0.18);
+  background: #0ea5e9; /* biru sedikit lebih gelap */
+  transform: translateY(-2px);
 }
 
 /* ===== PRODUCT INFO ===== */
@@ -65,39 +96,44 @@ html {
   gap: 30px;
   padding: 0 5%;
 }
+
 .product-container .product-gallery {
-  grid-column: 1 / -1;
+  grid-column: 1 / -1; /* supaya full lebar */
   margin-top: 8px;
 }
+
 .product-info h2 {
   font-family: "Montserrat", sans-serif;
   color: #38bdf8;
   margin-bottom: 12px;
 }
+
 .product-info ul {
   list-style: disc inside;
   margin-top: 10px;
   color: #e2e8f0;
+  line-height: 1.5;
 }
 
 /* ===== PRODUCT GALLERY ===== */
 .product-gallery .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
 }
+
 .product-gallery img {
   width: 100%;
-  height: 200px; /* dibesarkan dari 120px */
+  height: 200px; /* foto lebih besar */
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.35s, filter 0.35s, box-shadow 0.35s;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
+
 .product-gallery img:hover {
-  transform: translateY(-6px) scale(1.04);
-  filter: saturate(1.05);
-  box-shadow: 0 18px 40px rgba(2, 44, 67, 0.5);
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== LIGHTBOX ===== */
@@ -111,23 +147,21 @@ html {
   z-index: 2500;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.18s;
+  transition: opacity 0.2s;
 }
+
 #lightbox.show {
   opacity: 1;
   pointer-events: auto;
 }
+
 #lightbox img {
   max-width: 92%;
   max-height: 86%;
   border-radius: 8px;
-  box-shadow: 0 30px 70px rgba(2, 8, 23, 0.75);
-  transform: scale(0.98);
-  transition: transform 0.22s, opacity 0.18s;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
 }
-#lightbox.show img {
-  transform: scale(1);
-}
+
 #lightbox .close {
   position: absolute;
   top: 18px;
@@ -135,36 +169,31 @@ html {
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
-  opacity: 0.9;
 }
 
 /* ===== GALLERY GRID ===== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin: 16px auto 28px;
+  gap: 16px;
+  margin: 20px auto 30px;
   max-width: 1100px;
 }
+
 .gallery-grid .grid-item {
   overflow: hidden;
   border-radius: 10px;
 }
+
 .gallery-grid img {
   width: 100%;
-  aspect-ratio: 4 / 3; /* lebih tinggi dari 16/9 biar lebih besar */
+  aspect-ratio: 4 / 3; /* biar lebih tinggi */
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.26s, box-shadow 0.26s;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
+
 .gallery-grid img:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 18px 44px rgba(2, 44, 67, 0.45);
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
-
-/* ===== ANIMATIONS ===== */
-.scrolled-to {
-  animation: highlightPulse 0.9s cubic-bezier(.2, .9, .2, 1) forwards;
-  transform: translateY(-6px);
-}
-
