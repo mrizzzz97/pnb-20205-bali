@@ -64,15 +64,74 @@ window.addEventListener("scroll", () => {
 });
 
 /* =================== SMOOTH SCROLL =================== */
+// helper: add brief highlight when a target is scrolled-to
+function markScrolled(target) {
+  if (!target) return;
+  const apply = () => {
+    target.classList.add('scrolled-to');
+    setTimeout(() => target.classList.remove('scrolled-to'), 900);
+  };
+
+  // observe when the element enters viewport
+  try {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          apply();
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    io.observe(target);
+  } catch (e) {
+    // fallback: just apply after short delay
+    setTimeout(apply, 400);
+  }
+
+  // safety fallback: ensure it triggers even if observer fails
+  setTimeout(() => { if (!target.classList.contains('scrolled-to')) apply(); }, 1400);
+}
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    if (!target) return;
+
+    // compute top offset accounting for fixed navbar for smoother result
+    const navHeight = (typeof navbar !== 'undefined' && navbar) ? navbar.offsetHeight : 0;
+    const targetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+
+    // custom smooth scroll helper (returns a Promise)
+    function animateScrollTo(targetY, duration = 600) {
+      return new Promise((resolve) => {
+        const startY = window.pageYOffset;
+        const diff = targetY - startY;
+        const startTime = performance.now();
+        const ease = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; // easeInOutCubic
+
+        function step(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(1, elapsed / duration);
+          const value = ease(progress);
+          window.scrollTo(0, startY + diff * value);
+          if (progress < 1) requestAnimationFrame(step);
+          else resolve();
+        }
+        requestAnimationFrame(step);
       });
+    }
+
+    // if this anchor is a .btn, play press animation then smooth-scroll
+    if (this.classList.contains('btn')) {
+      this.classList.add('btn-press');
+      // wait for animation (or 260ms) then scroll
+      setTimeout(() => {
+        this.classList.remove('btn-press');
+        animateScrollTo(targetTop, 650).then(() => markScrolled(target));
+      }, 260);
+    } else {
+      animateScrollTo(targetTop, 650).then(() => markScrolled(target));
     }
   });
 });

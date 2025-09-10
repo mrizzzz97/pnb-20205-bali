@@ -291,6 +291,16 @@ nav ul li a:hover {
   from {
     opacity: 0;
     transform: translateY(50px);
+
+  /* brief press animation for "Pelajari Lebih Lanjut" buttons */
+  .btn-press {
+    animation: btnPress .36s cubic-bezier(.2,.8,.2,1);
+  }
+  @keyframes btnPress {
+    0% { transform: translateY(0) scale(1); }
+    40% { transform: translateY(2px) scale(.96); }
+    100% { transform: translateY(0) scale(1); }
+  }
   }
   to {
     opacity: 1;
