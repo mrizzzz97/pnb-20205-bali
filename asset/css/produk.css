@@ -1,5 +1,3 @@
-/* produk.css - styles for product / destination pages (Penglipuran) */
-
 html {
   scroll-behavior: smooth;
 }
@@ -90,7 +88,7 @@ html {
 }
 .product-gallery img {
   width: 100%;
-  height: 120px;
+  height: 200px; /* dibesarkan dari 120px */
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
@@ -154,7 +152,7 @@ html {
 }
 .gallery-grid img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3; /* lebih tinggi dari 16/9 biar lebih besar */
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.26s, box-shadow 0.26s;
@@ -168,11 +166,5 @@ html {
 .scrolled-to {
   animation: highlightPulse 0.9s cubic-bezier(.2, .9, .2, 1) forwards;
   transform: translateY(-6px);
-}
-@keyframes highlightPulse {
-  0%   { transform: translateY(6px); opacity: 0;   box-shadow: 0 0 0 0 rgba(56,189,248,0); }
-  12%  { transform: translateY(0);   opacity: 1;   box-shadow: 0 10px 36px -12px rgba(56,189,248,.2); }
-  48%  { transform: translateY(-6px);               box-shadow: 0 26px 68px -18px rgba(56,189,248,.2); }
-  100% { transform: translateY(0);   opacity: 1;   box-shadow: 0 0 0 0 rgba(56,189,248,0); }
 }
 
