@@ -9,12 +9,12 @@
 <body>
 
   <!-- Navbar -->
-  <nav>
+  <nav id="navbar">
     <div class="logo">Green & Smart Tourism</div>
     <ul>
       <li><a href="#" class="current">HOME</a></li>
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">DESTINATION</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#destinations">DESTINATION</a></li>
     </ul>
   </nav>
 
@@ -25,7 +25,7 @@
   </section>
 
   <!-- Carousel Section -->
-  <section class="carousel-wrapper">
+  <section class="carousel-wrapper" id="destinations">
     <button class="nav-btn prev">&#10094;</button>
     <div class="carousel">
       <div class="card active">
@@ -59,6 +59,75 @@
     </div>
     <button class="nav-btn next">&#10095;</button>
   </section>
+
+  <!-- About Us -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <h2>Tentang Kami</h2>
+      <p>
+        Green & Smart Tourism adalah inisiatif pariwisata berkelanjutan yang lahir dari semangat untuk 
+        menjaga kelestarian budaya dan alam Bali. Kami menggabungkan nilai-nilai lokal dengan inovasi 
+        teknologi, agar wisatawan dapat menikmati pengalaman modern tanpa meninggalkan jejak negatif 
+        terhadap lingkungan. Visi kami adalah menjadikan Bali sebagai destinasi wisata ramah lingkungan 
+        dan cerdas, dengan melibatkan masyarakat lokal serta mendukung ekowisata berbasis komunitas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <!-- About -->
+      <div class="footer-section">
+        <h3>Green & Smart Tourism</h3>
+        <p>
+          Inisiatif wisata berkelanjutan Bali, mengedepankan budaya lokal, kelestarian alam, 
+          dan teknologi digital untuk pengalaman ramah lingkungan.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>📍 Denpasar, Bali</p>
+        <p>📧 info@greenbali.com</p>
+        <p>📱 +62 812 3456 7890</p>
+        <div class="social-icons">
+          <a href="#">🌐</a>
+          <a href="#">📸</a>
+          <a href="#">🎥</a>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <p>Dapatkan update destinasi hijau terbaru.</p>
+        <form id="newsletter-form">
+          <input type="email" id="email" placeholder="Email Anda" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <small id="msg"></small>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Green & Smart Tourism Bali. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="/asset/js/script.js"></script>
 </body>
