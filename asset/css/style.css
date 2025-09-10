@@ -233,34 +233,7 @@ nav ul li a:hover {
   font-size: 20px;
 }
 
-#newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#newsletter-form input,
-#newsletter-form button {
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-}
-
-#newsletter-form button {
-  background: #38bdf8;
-  color: #fff;
-  cursor: pointer;
-  transition: .3s;
-}
-
-#newsletter-form button:hover {
-  background: #0284c7;
-}
-
-#msg {
-  margin-top: 8px;
-  font-size: 12px;
-}
+/* Newsletter styles removed */
 
 .footer-bottom {
   text-align: center;
