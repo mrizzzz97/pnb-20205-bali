@@ -1,381 +1,72 @@
-/* ========== Font ========== */
-@font-face {
-  font-family: "Montserrat";
-  src: url("asset/css/Montserrat.ttf") format("truetype");
+/* =========================================================
+   Produk Page Styles (produk.css)
+   ========================================================= */
+
+/* ================= Info Produk ================= */
+.produk-info {
+  padding: 70px 50px;
+  text-align: center;
 }
 
-@font-face {
-  font-family: "Roboto";
-  src: url("asset/css/Roboto.ttf") format("truetype");
+.produk-info h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2e7d32;
 }
 
-@font-face {
-  font-family: "StoryScript";
-  src: url("asset/css/Story-script.ttf") format("truetype");
-}
-
-/* ========== Reset & Body ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  color: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background: url("../img/awal/bg-1.png") no-repeat center/cover;
-}
-
-/* ========== Navigasi (Navbar) ========== */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  background: rgba(0, 0, 0, .5);
-  backdrop-filter: blur(5px);
-  transition: top .4s ease;
-}
-
-nav .logo {
-  font-family: "StoryScript", cursive;
-  font-size: 1.5rem;
-  background: rgba(0, 0, 0, .6);
-  padding: .3rem 1rem;
-  border-radius: 20px;
-}
-
-nav ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-nav ul li a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: .3s;
-}
-
-nav ul li a:hover,
-.current {
-  color: limegreen;
-}
-
-/* ========== Hero Produk ========== */
-.product-hero {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 120px 5% 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(20px) scale(.98);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-.product-hero.in-view {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  animation: fadeInUpSmall .6s ease both;
-}
-
-.product-hero .hero-image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-hero .hero-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-}
-
-.product-hero .hero-content h1 {
-  font-size: 2.4rem;
-  font-family: "Montserrat", sans-serif;
-  color: #38bdf8;
-  margin-bottom: 0.5rem;
-}
-
-.product-hero .hero-content p {
-  max-width: 600px;
-  color: #e2e8f0;
+.produk-info p {
+  max-width: 1000px;
+  margin: auto;
   line-height: 1.6;
 }
 
-.hero-content {
-  margin-top: 14px;
+/* Subjudul dalam Info Produk */
+.produk-info h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #1b5e20;
+  font-size: 1.4rem;
 }
 
-/* ========== Tombol (Button) ========== */
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 10px 18px;
-  background: #38bdf8;
-  color: #022c43;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
+/* List Style */
+.produk-info ul {
+  list-style: disc;
+  text-align: left;
+  max-width: 600px;
+  margin: 10px auto 20px auto;
+  padding-left: 20px;
+  color: #444;
+  line-height: 1.6;
 }
 
-.btn:hover {
-  background: #0ea5e9;
-  transform: translateY(-2px);
+
+/* ================= Gallery Produk ================= */
+.produk-gallery {
+  padding: 70px 50px;
+  text-align: center;
 }
 
-/* ========== Product Container & Info ========== */
-.product-container {
-  max-width: 1200px;
-  margin: 40px auto 80px;
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 30px;
-  padding: 0 5%;
-}
-
-.product-container .product-gallery {
-  grid-column: 1 / -1;
-  margin-top: 8px;
-}
-
-.product-info {
-  opacity: 0;
-  transform: translateY(20px) scale(.98);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-.product-info.in-view {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  animation: fadeInUpSmall .6s ease both;
-  animation-delay: .05s;
-}
-
-.product-info h2 {
-  font-family: "Montserrat", sans-serif;
-  color: #38bdf8;
-  margin-bottom: 12px;
-}
-
-.product-info ul {
-  list-style: disc inside;
-  margin-top: 10px;
-  color: #e2e8f0;
-  line-height: 1.5;
-}
-
-/* ========== Product Gallery ========== */
-.product-gallery {
-  opacity: 0;
-  transform: translateY(20px) scale(.98);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-.product-gallery.in-view {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  animation: fadeInUpSmall .6s ease both;
-  animation-delay: .15s;
-}
-
-.product-gallery .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.product-gallery img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.product-gallery img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-/* ========== Lightbox ========== */
-#lightbox {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(2, 8, 23, 0.85);
-  z-index: 2500;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-}
-
-#lightbox.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#lightbox img {
-  max-width: 92%;
-  max-height: 86%;
-  border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-}
-
-#lightbox .close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  color: #fff;
+.produk-gallery h2 {
   font-size: 2rem;
-  cursor: pointer;
+  margin-bottom: 20px;
+  color: #2e7d32;
 }
 
-/* ========== Gallery Grid ========== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin: 20px auto 30px;
-  max-width: 1100px;
-}
-
-.gallery-grid .grid-item {
-  overflow: hidden;
-  border-radius: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 
 .gallery-grid img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 200px;
   object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.25s, box-shadow 0.25s;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
 .gallery-grid img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transform: scale(1.05);
 }
 
-/* ========== About Section (Produk) ========== */
-.about-container {
-  max-width: 1000px;
-  margin: 120px auto;
-  padding: 40px 20px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: .8s;
-}
-
-.about-container.show,
-.about-container.in-view {
-  opacity: 1;
-  transform: translateY(0);
-  animation: fadeInUpSmall .6s ease both;
-}
-
-.about-container h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  color: #38bdf8;
-  margin-bottom: 20px;
-}
-
-.about-container p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #e2e8f0;
-  max-width: 800px;
-  margin: auto;
-}
-
-/* ========== Footer ========== */
-.footer {
-  background: #0f172a;
-  color: #e5e7eb;
-  padding: 40px 20px 20px;
-  animation: fadeUp 1.5s ease;
-}
-
-.footer-container {
-  display: grid;
-  gap: 30px;
-  margin: auto;
-  max-width: 1200px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.footer h3,
-.footer h4 {
-  color: #38bdf8;
-  margin-bottom: 15px;
-}
-
-.footer p,
-.footer li,
-.footer a {
-  font-size: 14px;
-  color: #cbd5e1;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: #38bdf8;
-}
-
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section li {
-  margin-bottom: 8px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  padding-top: 15px;
-  font-size: 13px;
-  color: #94a3b8;
-  border-top: 1px solid #1e293b;
-}
-
-/* ========== Animasi ========== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUpSmall {
-  from { opacity: 0; transform: translateY(20px) scale(.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}

@@ -1,318 +1,316 @@
-/* ========== Font ========== */
+/* ==================== Font Import ==================== */
 @font-face {
   font-family: "Montserrat";
-  src: url("asset/css/Montserrat.ttf") format("truetype");
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
 }
-
+@font-face {
+  font-family: "Story-script";
+  src: url("../fonts/Story-script.ttf") format("truetype");
+}
 @font-face {
   font-family: "Roboto";
-  src: url("asset/css/Roboto.ttf") format("truetype");
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "StoryScript";
-  src: url("asset/css/Story-script.ttf") format("truetype");
-  
-}
-
-
-
-/* ========== Reset & Body ========== */
+/* ==================== Reset ==================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Roboto", sans-serif;
-  color: #fff;
-  min-height: 100vh;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
   overflow-x: hidden;
-  background: url("../img/awal/bg-1.png") no-repeat center/cover;
 }
 
-/* ========== Navigasi (Navbar) ========== */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+/* ==================== Header ==================== */
+header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;
-  background: rgba(0, 0, 0, .5);
-  backdrop-filter: blur(5px);
-  transition: top .4s ease;
-}
-
-nav .logo {
-  font-family: "StoryScript", cursive;
-  font-size: 1.5rem;
-  background: rgba(0, 0, 0, .6);
-  padding: .3rem 1rem;
-  border-radius: 20px;
-}
-
-nav ul {
+  padding: 15px 50px;
   display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-nav ul li a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
   transition: .3s;
 }
+header.scrolled {
+  background: #fff;
+  padding: 10px 40px;
+}
+header .logo {
+  font-size: 1.6rem;
+  font-weight: 700px;
+  color: #fff;
+  font-family: "Story-script", cursive;
+}
+header.scrolled b {
+  color: #2e7d32;
+}
+header.scrolled a {
+  color: #111;
+}
+header nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+header a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: .3s;
+  color: #fff;
+}
+header a:hover {
+  color: #2e7d32;
 
-nav ul li a:hover,
-.current {
-  color: limegreen;
+}
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #2e7d32;
 }
 
-/* ========== Bagian Hero ========== */
+/* Mobile */
+@media (max-width: 768px) {
+  header nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    padding: 20px 0;
+    background: #111;
+
+  }
+  header nav.active {
+    display: flex;  
+  }
+  header.scrolled {
+    background: #fff;
+  }
+  header.scrolled nav {
+    background: #fff;
+  }
+  header nav ul {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ==================== Hero ==================== */
 .hero {
-  position: relative;
+  height: 100vh;
+  background: url("../img/awal/bg-1.png") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  max-width: 40%;
-  padding-left: 5%;
-  z-index: 1;
-  animation: fadeIn 2s ease;
-}
-
-.hero h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 8rem;
-  line-height: 1;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin-top: 1rem;
-  max-width: 400px;
-}
-
-/* ========== Carousel ========== */
-.carousel-wrapper {
-  position: absolute;
-  top: 20%;
-  right: 3%;
-  width: 55%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1rem;
-}
-
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: .5s;
-}
-
-.card {
-  width: 250px;
-  margin: 0 10px;
-  flex-shrink: 0;
-  background: rgba(0, 0, 0, .7);
-  border-radius: 15px;
-  overflow: hidden;
-  opacity: .6;
-  transform: scale(.8);
-  transition: .4s;
-}
-
-.card img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-
-.card.active {
-  transform: scale(1.1);
-  opacity: 1;
-  z-index: 2;
-}
-
-.card h3 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem;
-  margin: .75rem;
-}
-
-.card p {
-  font-size: .85rem;
-  margin: 0 .75rem 1rem;
-  line-height: 1.4;
-  color: #f0f0f0;
-}
-
-/* ========== Tombol Navigasi Carousel ========== */
-.nav-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: .5rem 1rem;
-  font-size: 2rem;
+  text-align: center;
   color: #fff;
-  z-index: 1000;
-  background: rgba(0, 0, 0, .6);
-  transition: .3s;
+  padding: 0 20px;
 }
-
-.nav-btn:hover {
-  background: rgba(255, 255, 255, .2);
-}
-
-.prev-btn {
-  position: absolute;
-  top: 50%;
-  left: -60px;
-  transform: translateY(-50%);
-}
-
-.next-btn {
-  position: absolute;
-  top: 50%;
-  right: -60px;
-  transform: translateY(-50%);
-}
-
-/* ========== Bagian Footer ========== */
-.footer {
-  background: #0f172a;
-  color: #e5e7eb;
-  padding: 40px 20px 20px;
-  animation: fadeUp 1.5s ease;
-}
-
-.footer-container {
-  display: grid;
-  gap: 30px;
-  margin: auto;
-  max-width: 1200px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.footer h3,
-.footer h4 {
-  color: #38bdf8;
+.hero h1 {
+  font-size: 48px;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 15px;
 }
-
-.footer p,
-.footer li,
-.footer a {
-  font-size: 14px;
-  color: #cbd5e1;
+.hero span {
+  color: #66bb6a;
+  font-family: "Story-script", cursive;
+}
+.hero p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+.hero .btn {
+  padding: 12px 28px;
+  background: #2e7d32;
+  color: #fff;
   text-decoration: none;
+  border-radius: 8px;
+  transition: .3s;
+  font-family: "Story-script", cursive;
+}
+.hero .btn:hover {
+  background: #1b5e20;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
 }
 
-.footer a:hover {
-  color: #38bdf8;
-}
-
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section li {
-  margin-bottom: 8px;
-}
-
-/* Catatan: style .social-icons dihapus bersama bagian Kontak */
-
-.footer-bottom {
+/* ==================== Section ==================== */
+.section {
+  padding: 80px 50px;
   text-align: center;
-  margin-top: 30px;
-  padding-top: 15px;
-  font-size: 13px;
-  color: #94a3b8;
-  border-top: 1px solid #1e293b;
+}
+.section h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+.section p {
+  margin-bottom: 40px;
+  color: #555;
+  text-align: left;
 }
 
-/* ========== Bagian About ========== */
+/* ==================== Destinations ==================== */
+.section h2{
+  font-family: "Story-Script", cursive;
+}
+.destinations {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+}
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+}
+.card-body h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+.card-body p {
+  margin-bottom: 15px;
+  color: #555;
+}
+.card-body .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #2e7d32;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: .3s;
+}
+.card-body .btn:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+/* ==================== About ==================== */
+
 .about-container {
-  max-width: 1000px;
-  margin: 120px auto;
-  padding: 40px 20px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Selalu 2 kolom */
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.about-box {
+  border-radius: 20px;
+  transition: .3s;
+  box-shadow: 0 3px 10px rgba(0,0,0,.05);
+  padding: 20px;
+}
+
+.about-box h3{
+  font-family: "Montserrat", sans-serif;
+  color: #2e7d32;
+  font-size:22px;
+}
+
+.about-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,.1);
+}
+
+@media (max-width: 768px) {
+    .about-container {
+      grid-template-columns: 1fr; 
+    }
+}
+
+
+
+/* ==================== Values ==================== */
+.values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.value-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.05);
+  transition: .3s;
+}
+.value-box span {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 12px;
+}
+.value-box h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  color: #2e7d32;
+}
+.value-box p {
+  color: #555;
+}
+.value-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,.1);
+}
+
+/* ==================== Animations ==================== */
+.reveal {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(40px);
   transition: .8s;
 }
-
-.about-container.show {
+.reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* juga dukung kelas tambahan dari product-anim.js */
-.about-container.in-view {
-  opacity: 1;
-  transform: translateY(0);
-  animation: fadeInUpSmall .6s ease both;
+/* ==================== Footer ==================== */
+footer {
+  background: #2e7d32;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: .9rem;
+  margin-top: 50px;
 }
-
-.about-container h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  color: #38bdf8;
-  margin-bottom: 20px;
-}
-
-.about-container p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #e2e8f0;
-  max-width: 800px;
-  margin: auto;
-}
-
-/* ========== Animasi ========== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Animasi produk masuk (dipakai di halaman produk) */
-@keyframes fadeInUpSmall {
-  from { opacity: 0; transform: translateY(20px) scale(.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.product-hero,
-.product-info,
-.product-gallery {
-  opacity: 0;
-  transform: translateY(20px) scale(.98);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-.product-hero.in-view,
-.product-info.in-view,
-.product-gallery.in-view {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  animation: fadeInUpSmall .6s ease both;
-}
-
-/* delay animasi (stagger) */
-.product-info.in-view { animation-delay: .05s; }
-.product-gallery.in-view { animation-delay: .15s; }
-

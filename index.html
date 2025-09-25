@@ -3,144 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Green & Smart Tourism</title>
+  <title>Greenesia - Green & Smart Tourism</title>
   <link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo"><b>Greenesia</b></div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav>
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#destinasi">Destinasi</a></li>
+        <li><a href="#nilai">Nilai Kami</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Navbar -->
-  <nav id="navbar">
-    <div class="logo">Green & Smart Tourism</div>
-    <ul>
-      <li><a href="#" class="current">HOME</a></li>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#destinations">DESTINATION</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <h1>BALI</h1>
-    <p>Nikmati pengalaman modern yang menjaga alam!</p>
+  <!-- HERO -->
+  <section class="hero" id="beranda">
+    <h1>Selamat Datang di <span>Greenesia</span></h1>
+    <p>Pariwisata berkelanjutan yang memadukan alam hijau dan teknologi pintar.</p>
+    <a href="#destinasi" class="btn">Jelajahi Destinasi</a>
   </section>
 
-  <!-- Carousel Section -->
-  <section class="carousel-wrapper" id="destinations">
-    <button class="nav-btn prev">&#10094;</button>
-    <div class="carousel">
-      <div class="card active">
-        <a href="penglipuran.html">
-          <img src="asset/img/awal/Desa-Wisata-Penglipuran-Potrait.png" alt="Desa Wisata Penglipuran">
-        </a>
-        <h3>Desa Wisata Penglipuran</h3>
-        <p>Desa adat Bali yang terkenal bersih, rapi, dan menjaga tradisi budaya.</p>
+  <!-- DESTINASI -->
+  <section class="section" id="destinasi">
+    <h2>Destinasi Unggulan</h2>
+    <div class="destinations">
+      <div class="card">
+        <img src="asset/img/Desa Wisata Penglipuran/Desa-Wisata-Penglipuran-1.jpg" alt="Desa Penglipuran">
+        <div class="card-body">
+          <h3>Desa Wisata Penglipuran</h3>
+          <p>Desa adat Bali yang dikenal sebagai salah satu desa terbersih di dunia.</p>
+          <a href="penglipuran.html" class="btn">Lihat Detail</a>
+        </div>
       </div>
       <div class="card">
-        <a href="batur.html">
-          <img src="asset/img/awal/Gunung-Batur-Kintamani-Potrait.jpg" alt="Gunung Batur Kintamani">
-        </a>
-        <h3>Gunung Batur Kintamani</h3>
-        <p>Gunung berapi aktif dengan pemandangan indah dan danau alami di sekitarnya.</p>
+        <img src="asset/img/Gunung Batur Kintamani/Gunung-Batur-Kintamani-1.jpg" alt="Gunung Batur">
+        <div class="card-body">
+          <h3>Gunung Batur Kintamani</h3>
+          <p>Gunung berapi aktif dengan panorama sunrise memukau dan danau Batur.</p>
+          <a href="batur.html" class="btn">Lihat Detail</a>
+        </div>
       </div>
       <div class="card">
-        <a href="mangrove.html">
-          <img src="asset/img/awal/Hutan-Mangrove-Ngurah-Rai-Potrait.jpg" alt="Hutan Mangrove Ngurah Rai">
-        </a>
-        <h3>Hutan Mangrove Ngurah Rai</h3>
-        <p>Kawasan hijau ekowisata pesisir Bali yang menjaga ekosistem pantai.</p>
+        <img src="asset/img/Hutan Mangrove Ngurah Rai/Hutan-Mangrove-Ngurah-Rai-1.jpg" alt="Hutan Mangrove">
+        <div class="card-body">
+          <h3>Hutan Mangrove Ngurah Rai</h3>
+          <p>Ekowisata edukatif untuk mengenal ekosistem pesisir dan keanekaragaman hayati.</p>
+          <a href="mangrove.html" class="btn">Lihat Detail</a>
+        </div>
       </div>
       <div class="card">
-        <a href="sanur.html">
-          <img src="asset/img/awal/Pantai-Sanur-Eco-Beach-potrait.jpg" alt="Pantai Sanur Eco Beach">
-        </a>
-        <h3>Pantai Sanur Eco Beach</h3>
-        <p>Pantai ramah lingkungan dengan sunrise indah dan suasana tenang.</p>
+        <img src="asset/img/Pantai Sanur Eco Beach/Pantai-Sanur-Eco-Beach-1.jpg" alt="Pantai Sanur">
+        <div class="card-body">
+          <h3>Pantai Sanur Eco Beach</h3>
+          <p>Pantai ramah lingkungan dengan sunrise indah dan wisata berbasis komunitas.</p>
+          <a href="sanur.html" class="btn">Lihat Detail</a>
+        </div>
       </div>
     </div>
-    <button class="nav-btn next">&#10095;</button>
   </section>
-
-  <!-- About Us -->
-   <section id="about" class="about">
-  <div class="about-container">
+  <!-- TENTANG KAMI -->
+  <section class="section" id="tentang">
     <h2>Tentang Kami</h2>
     <p>
-      <strong>Green & Smart Tourism</strong> adalah sebuah inisiatif pariwisata berkelanjutan yang hadir dari kesadaran bahwa masa depan wisata Bali harus 
-      berjalan seiring antara <b>modernitas</b> dan <b>pelestarian alam</b>. 
-      Kami bukan sekadar platform informasi wisata, melainkan gerakan digital yang berupaya menghadirkan pengalaman perjalanan yang ramah lingkungan, cerdas, 
-      serta memberi manfaat nyata bagi masyarakat lokal.
-    </p><br>
-
-    <p>
-      Lahir dari kombinasi antara teknologi dan kearifan lokal, kami memanfaatkan <b>website wisata digital</b> sebagai sarana edukasi, reservasi, 
-      hingga promosi ekowisata berbasis komunitas. Melalui pendekatan ini, wisatawan dapat merencanakan perjalanan dengan lebih mudah dan efisien, 
-      sekaligus memahami pentingnya menjaga kelestarian lingkungan. 
-      Setiap informasi yang kami sajikan dikurasi untuk menekankan nilai-nilai ekowisata, keberlanjutan, dan budaya Bali yang otentik.
-    </p><br>
-
-    <p>
-      Destinasi yang kami angkat bukanlah sembarang tujuan wisata, melainkan lokasi-lokasi yang mencerminkan prinsip <b>Green & Smart Tourism</b>. 
-      Misalnya, Desa Wisata Penglipuran yang dikenal dengan tata ruang dan tradisi adatnya, Gunung Batur Kintamani dengan lanskap vulkaniknya yang menawan, 
-      Hutan Mangrove Ngurah Rai sebagai paru-paru kota, hingga Pantai Sanur Eco Beach yang dirancang sebagai kawasan pesisir ramah lingkungan. 
-      Semua dipilih dengan visi menghadirkan wisata yang <b>indah, edukatif, dan berkelanjutan</b>.
-    </p><br>
-
-    <p>
-      Kami percaya bahwa teknologi bukan ancaman bagi tradisi, melainkan jembatan. 
-      Melalui platform digital, wisatawan bisa mendapatkan informasi real-time, melakukan reservasi tanpa kertas, 
-      mengakses peta interaktif, serta mempelajari kebudayaan lokal sebelum berkunjung. 
-      Sementara itu, masyarakat lokal memperoleh ruang untuk memperkenalkan produk, homestay, dan layanan wisata mereka secara lebih luas.
-    </p><br>
-
-    <p>
-      Visi kami adalah menjadikan Bali sebagai <b>contoh dunia</b> dalam mengelola pariwisata yang modern sekaligus ramah lingkungan. 
-      Kami berkomitmen pada prinsip keberlanjutan: mengurangi penggunaan plastik sekali pakai, mendorong penggunaan energi terbarukan, 
-      dan mendukung sistem pengelolaan sampah terpadu. 
-      Dengan begitu, setiap perjalanan bukan hanya meninggalkan kenangan, tetapi juga kontribusi nyata bagi alam dan masyarakat Bali.
-    </p><br>
-
-    <p>
-      <strong>Green & Smart Tourism</strong> adalah tentang <b>perjalanan yang bertanggung jawab</b>. 
-      Di sini, modernitas bertemu dengan tradisi, teknologi berjalan beriringan dengan budaya, 
-      dan wisatawan menjadi bagian dari solusi menjaga Bali agar tetap lestari bagi generasi mendatang.
+      Greenesia adalah platform pariwisata hijau dan cerdas yang berkomitmen menghadirkan pengalaman wisata berkelanjutan di Indonesia. Kami menggabungkan keindahan alam dengan inovasi teknologi untuk menciptakan perjalanan yang ramah lingkungan, memberdayakan masyarakat lokal, dan menjaga kelestarian budaya.
+      Sebagai bagian dari gerakan menuju masa depan yang lebih hijau, Greenesia hadir untuk menjembatani wisatawan dengan destinasi yang tidak hanya indah secara alamiah, tetapi juga mendukung keberlanjutan. Kami percaya bahwa pariwisata bukan hanya tentang rekreasi, melainkan juga tentang kontribusi terhadap masyarakat dan lingkungan. Oleh karena itu, setiap langkah kami difokuskan pada keseimbangan antara kenyamanan wisatawan, pelestarian alam, dan pengembangan ekonomi lokal.
     </p>
-  </div>
-</section>
-
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="footer-container">
-      
-      <!-- About -->
-      <div class="footer-section">
-        <h3>Green & Smart Tourism</h3>
+    <div class="about-container">
+      <div class="about-box">
+        <h3>Visi</h3>
         <p>
-          Inisiatif wisata berkelanjutan Bali, mengedepankan budaya lokal, kelestarian alam, 
-          dan teknologi digital untuk pengalaman ramah lingkungan.
+          Menjadi pelopor pariwisata hijau dan pintar di Indonesia yang memberi inspirasi global. Kami bertekad untuk menghadirkan model pariwisata yang ramah lingkungan, modern, serta berkelanjutan, sehingga mampu mengangkat nama Indonesia di kancah dunia sebagai destinasi wisata yang indah sekaligus bertanggung jawab.
         </p>
       </div>
+      <div class="about-box">
+        <h3>Misi</h3>
+        <p>
+          Misi kami adalah membangun ekosistem wisata berkelanjutan melalui edukasi, inovasi, dan kolaborasi dengan komunitas lokal. Kami berfokus pada pengembangan teknologi ramah lingkungan yang mendukung perjalanan wisata lebih efisien, nyaman, dan minim dampak negatif bagi alam. Greenesia juga berkomitmen untuk memberdayakan masyarakat lokal dengan menciptakan peluang usaha, memberikan pelatihan, serta mempromosikan produk dan budaya daerah.
 
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-        </ul>
+          Selain itu, kami berusaha melestarikan alam dan budaya melalui program konservasi, pengurangan jejak karbon, dan kampanye sadar wisata. Kami ingin mengedukasi wisatawan agar lebih peduli terhadap lingkungan serta ikut menjaga keindahan destinasi yang mereka kunjungi, sehingga pariwisata dapat terus dinikmati oleh generasi mendatang.
+        </p>
       </div>
-
-      <!-- Contact -->
-  <!-- Contact section removed as requested -->
-
     </div>
+  </section>
 
-    <div class="footer-bottom">
-      <p>© 2025 Green & Smart Tourism Bali. All rights reserved.</p>
+
+  <!-- NILAI KAMI -->
+  <section class="section" id="nilai">
+    <h2>Nilai Kami</h2>
+    <div class="values">
+      <div class="value-box"><span>🌱</span><h4>Hijau</h4><p>Menjaga kelestarian lingkungan melalui konsep wisata ramah alam.</p></div>
+      <div class="value-box"><span>🤝</span><h4>Komunitas</h4><p>Memberdayakan masyarakat lokal dan melestarikan budaya tradisional.</p></div>
+      <div class="value-box"><span>💡</span><h4>Inovasi</h4><p>Menggunakan teknologi pintar untuk menghadirkan pengalaman baru.</p></div>
+      <div class="value-box"><span>🌍</span><h4>Berkelanjutan</h4><p>Membangun masa depan pariwisata yang adil dan bertanggung jawab.</p></div>
     </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer >
+    <p>© 2025 Greenesia. Semua Hak Dilindungi.</p>
   </footer>
+
   <script src="asset/js/script.js"></script>
-  <script src="asset/js/product-anim.js"></script>
 </body>
 </html>
