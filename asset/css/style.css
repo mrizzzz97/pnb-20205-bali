@@ -124,7 +124,7 @@ header a:hover {
   padding: 0 20px;
 }
 .hero h1 {
-  font-size: 48px;
+  font-size: 70px;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 15px;
 }
@@ -133,7 +133,7 @@ header a:hover {
   font-family: "Story-script", cursive;
 }
 .hero p {
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 30px;
   max-width: 700px;
 }
@@ -152,22 +152,7 @@ header a:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,.2);
 }
 
-/* ==================== Section ==================== */
-.section {
-  padding: 80px 50px;
-  text-align: center;
-}
-.section h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 15px;.
-  color: #2e7d32;
-}
-.section p {
-  margin-bottom: 40px;
-  color: #555;
-  text-align: left;
-}
+
 
 /* ==================== Destinations ==================== */
 .destinations {
@@ -191,7 +176,7 @@ header a:hover {
 }
 .card-body {
   padding: 20px;
-  text-align: center;
+  text-align: left;
   flex: 1;
 }
 .card-body h3 {
@@ -203,6 +188,7 @@ header a:hover {
 .card-body p {
   margin-bottom: 15px;
   color: #555;
+  text-align: left;
 }
 .card-body .btn {
   display: inline-block;
@@ -495,18 +481,6 @@ header a:hover {
   }
 }
 
-
-
-/* ==================== Animations ==================== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: .8s;
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ===================== FOOTER ===================== */
 footer {
