@@ -6,37 +6,49 @@
 .produk-info {
   padding: 70px 50px;
   text-align: center;
+  background: #f9fdf9;
 }
 
 .produk-info h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #2e7d32;
+  font-weight: 700;
+}
+
+.produk-info h3 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #1b5e20;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .produk-info p {
-  max-width: 1000px;
+  max-width: 950px;
   margin: auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: #444;
+  font-size: 1.05rem;
 }
 
-/* Subjudul dalam Info Produk */
-.produk-info h3 {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  color: #1b5e20;
-  font-size: 1.4rem;
-}
-
-/* List Style */
 .produk-info ul {
   list-style: disc;
   text-align: left;
-  max-width: 600px;
-  margin: 10px auto 20px auto;
-  padding-left: 20px;
+  max-width: 650px;
+  margin: 15px auto 30px auto;
+  padding-left: 25px;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+.produk-info hr {
+  max-width: 200px;
+  margin: 40px auto;
+  border: none;
+  height: 2px;
+  background: #c8e6c9;
+  border-radius: 2px;
 }
 
 
@@ -44,29 +56,58 @@
 .produk-gallery {
   padding: 70px 50px;
   text-align: center;
+  background: #ffffff;
 }
 
 .produk-gallery h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #2e7d32;
+  font-weight: 700;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
 }
 
 .gallery-grid img:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .produk-info {
+    padding: 50px 25px;
+  }
+
+  .produk-gallery {
+    padding: 50px 25px;
+  }
+
+  .produk-info h2,
+  .produk-gallery h2 {
+    font-size: 1.7rem;
+  }
+
+  .produk-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .produk-info p {
+    font-size: 1rem;
+  }
+}
