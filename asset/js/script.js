@@ -32,3 +32,17 @@ window.addEventListener("scroll", () => {
   document.getElementById("menu-toggle").onclick = () => {
   document.querySelector("header nav").classList.toggle("active");
 };
+
+// FAQ toggle
+document.querySelectorAll(".faq-question").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const item = btn.parentElement;
+    item.classList.toggle("active");
+  });
+});
+
+// Newsletter form (dummy)
+document.querySelector(".newsletter-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Terima kasih sudah berlangganan! 🌿");
+});

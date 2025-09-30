@@ -160,7 +160,7 @@ header a:hover {
 .section h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 2.2rem;
-  margin-bottom: 15px;
+  margin-bottom: 15px;.
   color: #2e7d32;
 }
 .section p {
@@ -170,9 +170,6 @@ header a:hover {
 }
 
 /* ==================== Destinations ==================== */
-.section h2{
-  font-family: "Story-Script", cursive;
-}
 .destinations {
   margin-top: 50px;
   display: grid;
@@ -227,36 +224,76 @@ header a:hover {
 }
 
 /* ==================== About ==================== */
+.section {
+  padding: 80px 50px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
 
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.section > p {
+  margin-bottom: 40px;
+  color: #555;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* grid untuk teks + gambar */
 .about-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Selalu 2 kolom */
+  grid-template-columns: 1fr 1fr;
   gap: 25px;
   margin-top: 20px;
+  align-items: center;
 }
 
 .about-box {
   border-radius: 20px;
-  transition: .3s;
-  box-shadow: 0 3px 10px rgba(0,0,0,.05);
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   padding: 20px;
+  text-align: left;
 }
 
-.about-box h3{
+.about-box h3 {
   font-family: "Montserrat", sans-serif;
   color: #2e7d32;
-  font-size:22px;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .about-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
+.about-img{
+  transition: 0.3s;
+}
+
+.about-img img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+
 @media (max-width: 768px) {
-    .about-container {
-      grid-template-columns: 1fr; 
-    }
+  .about-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -294,6 +331,172 @@ header a:hover {
   box-shadow: 0 6px 15px rgba(0,0,0,.1);
 }
 
+/* ===================== TESTIMONI ===================== */
+#testimoni {
+  background: #f9f9f9;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+#testimoni h2 {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 40px;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 20px 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.testimonial:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #2e7d32;
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.testimonial h4 {
+  font-weight: bold;
+  color: #2e7d32;
+  font-size: 1rem;
+}
+
+/* FAQ */
+.faq-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: #2e7d32;
+  color: #fff;
+  text-align: left;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #256828;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #f9f9f9;
+  padding: 0 15px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p {
+  margin: 15px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 15px;
+}
+
+/* Newsletter */
+.newsletter {
+  text-align: center;
+  background: #fff;
+  padding: 50px 20px;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+
+.newsletter h2 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.newsletter-form button {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #256828;
+}
+
+@media (max-width: 600px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+
+
 /* ==================== Animations ==================== */
 .reveal {
   opacity: 0;
@@ -305,12 +508,66 @@ header a:hover {
   transform: translateY(0);
 }
 
-/* ==================== Footer ==================== */
+/* ===================== FOOTER ===================== */
 footer {
   background: #2e7d32;
   color: #fff;
-  text-align: center;
-  padding: 20px;
-  font-size: .9rem;
-  margin-top: 50px;
+  padding: 60px 50px 20px;
+  font-family: "Montserrat", sans-serif;
 }
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.footer-col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-col p,
+.footer-col ul {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #c8e6c9;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
